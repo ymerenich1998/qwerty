@@ -1,0 +1,75 @@
+body{
+  margin: 0;
+}
+
+img{
+  width:100px;
+}
+
+nav{
+  position: fixed;
+  width: 100px;
+  height: 100vh;
+  background-color: darkgrey;
+  z-index: 99;
+    transition: width 1s;
+}
+
+.title{
+  width: 100%;
+  padding: 20px;
+  font-size: 18pt;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.first-menu{
+  position: relative;
+  display: inline-block;
+}
+
+.name-menu{
+  position: relative;
+  padding-right: 30px;
+  transition: opacity 1.5s ease;
+  left:-200px;
+  opacity: 0;
+  color: white;
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+}
+
+
+.icons:hover {
+  background-color: grey;
+}
+
+nav:hover{
+  width: 185px;
+}
+
+nav:hover .name-menu{
+  left: 0px;
+  opacity: 1;
+}
+
+.block{
+  position: relative;
+  background-color: grey;
+  width: 500px;
+  height: 400px;
+  margin: auto;
+}
+
+.block .date{
+  width: 50px;
+  margin: auto;
+  padding-top: 35%;
+  color: white;
+
+}

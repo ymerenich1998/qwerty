@@ -1,0 +1,122 @@
+/* nav{
+  display: flex;
+}
+
+ul{
+  display: flex;
+  list-style: none;
+}
+
+.nav-item{
+  position: relative;
+  margin: 10px 20px;
+
+}
+
+.nav-item::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: red;
+  bottom: -5px;
+  transition: all .5s;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.nav-link{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all .5s;
+}
+
+.nav-item:hover::before{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-item:hover .nav-link{
+  color: red;
+} */
+
+body{
+  margin: 0;
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+                      "header header header header header"
+                      "left-bar main main main right-bar"
+                      "footer footer footer footer footer";
+
+}
+
+.grid-container > div{
+  padding: 20px;
+}
+
+.item{
+  background-color: darkgrey;
+}
+
+.item:nth-child(even){
+  background-color: red;
+  color: white;
+}
+
+.item.one{
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.item.six{
+  grid-column: 2/4;
+  grid-row: 1/4;
+}
+
+.header{
+  grid-area: header;
+  background-color: grey;
+}
+
+.main{
+  grid-area: main;
+  background-color: pink;
+}
+
+.left-bar{
+  grid-area: left-bar;
+  background-color: green;
+}
+
+.right-bar{
+  grid-area: right-bar;
+  background-color: black;
+}
+
+.footer{
+  grid-area: footer;
+  background-color: yellow;
+}
+
+@media(max-width:768px){
+  .grid-container{
+    grid-template-areas:
+                        "header header header header header"
+                        "main main main main main"
+                        "left-bar left-bar left-bar left-bar left-bar"
+                        "footer footer footer footer footer";
+
+  }
+  .right-bar{
+    display: none;
+  }
+}
